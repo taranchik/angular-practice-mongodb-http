@@ -1,0 +1,32 @@
+<h2>List of Comments</h2>
+
+<p>
+	<button class="btn btn-primary" (click)="createComment()">Create</button>
+	<button class="btn btn-default" (click)="refresh()">Refresh</button>
+</p>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{errorMessage}}
+</div>
+<table class="table table-striped">
+	<tr>
+		<th>User name</th>
+        <th>Comment text</th>
+        <th>Date of comment</th>
+		<th>Edit / Delete</th>
+	</tr>
+	<tr *ngFor="let comment of comments">
+		<td>
+			{{comment.userName}}
+		</td>
+		<td>
+			{{comment.commentText}}
+        </td>
+        <td>
+			{{comment.date}}
+		</td>
+		<td>
+			<button class="btn btn-default" (click)="editComment(comment)">Edit</button>
+			<button class="btn btn-default" (click)="deleteComment(comment)">Delete</button>
+		</td>
+	</tr>
+</table>

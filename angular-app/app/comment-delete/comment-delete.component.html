@@ -1,0 +1,10 @@
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{errorMessage}}
+</div>
+
+<p>You are about to delete the next entry:</p>
+<p>Name: {{currentComment?.name}}</p>
+<p>Price: {{currentComment?.price}}</p>
+
+<button class="btn btn-default" (click)="goBack()">Cancel</button>
+<button class="btn btn-primary" (click)="deleteComment()">Delete</button>
